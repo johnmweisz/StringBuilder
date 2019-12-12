@@ -19,7 +19,7 @@ namespace StringBuilder
             input = Console.ReadLine();
             Console.WriteLine(ValidTime(input));
 
-            Console.WriteLine("input words seperated by a space");
+            Console.WriteLine("input words separated by a space");
             input = Console.ReadLine();
             Console.WriteLine(PascalCase(input));
         }
@@ -60,10 +60,6 @@ namespace StringBuilder
             if (String.IsNullOrWhiteSpace(input)) return "Invalid input";
             var checker = input.Split(':');
             if (checker.Length != 2) return "Invalid time";
-            foreach (var digits in checker)
-            {
-                if (digits.Length != 2) return "Invalid Time"
-            }
             try
             {
                 var hour = Convert.ToInt32(checker[0]);
@@ -87,6 +83,8 @@ namespace StringBuilder
                 var newWord = str[0].ToString().ToUpper() + str.ToLower().Substring(1);
                 builder.Append(newWord);
             }
+
+            return Convert.ToString(builder);
         }
     }
 }
